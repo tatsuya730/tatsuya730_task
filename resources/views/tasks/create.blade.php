@@ -15,7 +15,7 @@
     @if ($errors->any())
         <div class="error">
             <p>
-                <b>{{ count($errors) }}件のエラーがあります。</b>
+                <b>{{ count($errors) }}【エラー内容】</b>
             </p>
             <ul>
                 @foreach ($errors->all() as $error)
