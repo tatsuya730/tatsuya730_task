@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
+
 <body>
     <h1>タスク詳細</h1>
     <p>
@@ -22,8 +24,8 @@
 
     <div class="button-group">
         <!-- $taskのidを元に編集ページへ遷移する -->
-        <button onclick='location.href="{{ route("tasks.index", $task) }}"'>一覧に戻る</button>
-        <button onclick='location.href="{{ route("tasks.edit", $task) }}"'>編集する</button>
+        <button onclick='location.href="{{ route('tasks.index', $task) }}"'>一覧に戻る</button>
+        <button onclick='location.href="{{ route('tasks.edit', $task) }}"'>編集する</button>
         <form action="{{ route('tasks.destroy', $task) }}" method="post">
             @csrf
             @method('DELETE')
@@ -31,4 +33,5 @@
         </form>
     </div>
 </body>
+
 </html>

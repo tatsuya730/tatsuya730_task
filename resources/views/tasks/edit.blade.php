@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,17 @@
     <title>task edit</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
+
 <body>
     <h1>更新</h1>
 
     @if ($errors->any())
         <div class="error">
             <p>
-                <b>{{ count($errors) }}【エラー内容】</b>
+                <b>【エラー内容】</b>
             </p>
             <ul>
-                @foreach($errors->all() as $error)
+                @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
@@ -38,8 +40,9 @@
         <!-- ボタンのグループを作成 -->
         <div class="button-group">
             <input type="submit" value="更新">
-            <button type="button" onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
+            <button type="button" onclick='location.href="{{ route('tasks.show', $task) }}"'>詳細に戻る</button>
         </div>
     </form>
 </body>
+
 </html>

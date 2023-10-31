@@ -75,5 +75,4 @@ class TaskController extends Controller
 
         return redirect(route("tasks.index"));
     }
-
 }

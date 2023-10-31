@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>task index</title>
     <style>
-        ul {
-            list-style-type: none; /* リストマーカーを削除 */
-            padding-left: 0; /* 左のパディングを0に設定 */
+        ul.no-marker {
+            list-style-type: none;
+            /* リストマーカーを削除 */
+            padding-left: 0;
+            /* 左のパディングを0に設定 */
         }
     </style>
 </head>
+
 <body>
 
     <!-- タスク一覧の部分 -->
     <h1>タスク一覧</h1>
-    <ul>
+    <ul class="no-marker">
         @foreach ($tasks as $task)
             <!-- // リンク先をidで取得し名前で出力 -->
             <li>
                 <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
-                
+
                 <!-- 削除ボタンの追加 -->
                 <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline;">
                     @csrf
@@ -38,16 +42,14 @@
     <h1>新規論文投稿</h1>
 
     @if ($errors->any())
-        <div class="error">
-            <p>
-                <b>{{ count($errors) }}【エラー内容】</b>
-            </p>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+        <p>
+            <b>【エラー内容】</b>
+        </p>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     @endif
 
     <form action="{{ route('tasks.store') }}" method="post">
@@ -67,4 +69,5 @@
 
 
 </body>
+
 </html>
