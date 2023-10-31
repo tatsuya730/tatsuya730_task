@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <a href="{{ route('tasks.show', $task) }}">戻る</a>
     <h1>更新</h1>
 
     @if ($errors->any())
@@ -36,8 +35,11 @@
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
         </p>
-
-        <input type="submit" value="更新">
+        <!-- ボタンのグループを作成 -->
+        <div class="button-group">
+            <input type="submit" value="更新">
+            <button type="button" onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
+        </div>
     </form>
 </body>
 </html>
