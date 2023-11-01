@@ -6,14 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>task index</title>
-    <style>
-        ul.no-marker {
-            list-style-type: none;
-            /* リストマーカーを削除 */
-            padding-left: 0;
-            /* 左のパディングを0に設定 */
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -27,7 +20,7 @@
                 <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
 
                 <!-- 削除ボタンの追加 -->
-                <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline;">
+                <form action="{{ route('tasks.destroy', $task) }}" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">

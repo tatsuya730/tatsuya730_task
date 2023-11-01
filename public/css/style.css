@@ -19,3 +19,14 @@
     padding-left: 20px;
     /* 左のパディングを設定 */
 }
+
+ul.no-marker {
+    list-style-type: none;
+    /* リストマーカーを削除 */
+    padding-left: 0;
+    /* 左のパディングを0に設定 */
+}
+
+.delete-form {
+    display: inline;
+}
